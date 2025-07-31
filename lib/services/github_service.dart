@@ -4,9 +4,8 @@ import '../models/pull_request.dart';
 
 class GitHubService {
   static const String baseUrl = 'https://api.github.com';
-  // Replace with your actual repository
-  static const String owner = 'flutter';
-  static const String repo = 'flutter';
+  static const String owner = 'KafyMac';
+  static const String repo = 'feature-github-pr-viewer';
 
   Future<List<PullRequest>> fetchPullRequests() async {
     try {
