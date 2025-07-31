@@ -25,15 +25,12 @@ class AuthProvider with ChangeNotifier {
     _isLoading = true;
     notifyListeners();
 
-    // Simulate API call delay
     await Future.delayed(const Duration(seconds: 2));
 
-    // Simulate login validation (accept any non-empty credentials)
     if (username.isNotEmpty && password.isNotEmpty) {
       _token = 'abc123_fake_token_${DateTime.now().millisecondsSinceEpoch}';
       _isAuthenticated = true;
 
-      // Store token
       final prefs = await SharedPreferences.getInstance();
       await prefs.setString('auth_token', _token!);
 
